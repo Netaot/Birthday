@@ -6,59 +6,161 @@
     <title>HAPPY BIRTHDAY PAPA!!</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-  </head>  
-  <body style="
-  background-image:url(https://images.unsplash.com/photo-1468581264429-2548ef9eb732?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-  " 
-  class="flex justify-center h-screen items-center"
-  >
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  </head>
+  <body
+    class="flex justify-center h-screen items-center">
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+        <source src="papa.mp4" type="video/mp4">
+    </video>
+
     <div
-      class="bg-white border px-10 py-8 border-4 border-gray-300 shadow-lg shadow-blue-300 rounded-xl text-center animate__animated animate__backInDown m-8 w-80"
-      id="kartu"
-    >
-      <h1 class="text-3xl">Happy Birthday</h1>
-      <h1 class="text-4xl text-blue-500 font-bold animate__animated animate__tada animate__infinite">PAPA</h1>
-      <button 
-        class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full 
-        animate__animated animate__delay-1s
-        animate__pulse" onclick="ubahKartu()"
-      >
+      class="bg-white border px-10 py-8 border-4 border-gray-300 shadow-lg shadow-blue-300 rounded-xl text-center animate__animated animate__backInDown m-7 w-80" id="kartu" style="display: block;">
+      <h1 class="text-2xl font-semibold">​HAPPY BIRTHDAY​</h1>
+      <h1
+        class="text-4xl text-blue-500 font-bold animate__animated animate__pulse animate__infinite">
+        🥳PAPA🥳
+      </h1>
+      <button
+        class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+        onclick="ubahKartu()">
         Klik disini!
       </button>
     </div>
+    <div
+      class="bg-white px-10 py-8 border-4 border-gray-300 shadow-lg shadow-blue-300 rounded-xl text-center animate__animated animate__backInDown m-7 w-640px"
+      id="kartu1" style="display: none;">
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script>
+      const defaults = {
+        spread: 360,
+        ticks: 100,
+        gravity: 0,
+        decay: 0.94,
+        startVelocity: 30,
+        shapes: ["heart"],
+        colors: ["81CEFA", "4169E1", "B0E0E6", "00FFFF"],
+      };
+
       confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
+        ...defaults,
+        particleCount: 50,
+        scalar: 2,
       });
-      let kartu = document.getElementById("kartu");
+
+      confetti({
+        ...defaults,
+        particleCount: 25,
+        scalar: 3,
+      });
+
+      confetti({
+        ...defaults,
+        particleCount: 10,
+        scalar: 4,
+      });
+
       function ubahKartu() {
-        kartu.innerHTML = `<h1 class="font-semibold text-wrap animate__animated animate_zoomIn"> 
-        HAPPY BIRTHDAY PAPAAAA, semoga tahun ini rezekinya makin lancar dan di beri kesehatan, bisa menjadi bapak kasal. 
-        Semoga kita sekeluarga bisa terus bareng bareng, seru seruan bareng. WE LOVE YOU PAPAA!! 
+        document.getElementById("kartu").style.display = "none";
+        document.getElementById("kartu1").style.display = "block";
+
+        document.getElementById("kartu1").innerHTML= `<h1 class="font-semibold text-wrap animate__animated animate__zoomIn"> 
+          Happy Birthday Ayank Beb untuk yang ke-48. Semoga di tahun ini dan tahun berikutnya hingga akhir kita bisa bersama terus dan juga bersama dengan anak anak. semoga papa di berikan kesehatan, perlindungan dimanapun berada dan bisa menjadi bapak kasal serta dilancarkan segala urusannya, I love U ayank beb
+          </h1>     
+          <h2 class="mt-3 animate__animated animate__fateIn">
+            - Dari : Istrimu Tercinta -
+          </h2> 
+          <button 
+          class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full 
+          animate__animated animate__delay-1s
+          animate__tada" onclick="ubahKartu1()"
+          >
+            KLIK LAGIII!
+          </button>
+          `;
+      }
+
+      const Kartu = document.getElementById("kartu1");
+
+      function ubahKartu1() {
+        Kartu.innerHTML = `<h1 class="font-semibold text-wrap animate__animated animate_zoomIn"> 
+        Selamat ulang tahun papa ganteng calon kasal, semoga diberi umur panjang sehat barokah, bisa menjadi pemimpin yang berguna bagi nusa dan bangsa, dan ilmunya bisa menjadi amal jariyah. Terimakasih papa sudah menjadi papa yang hebatt, love bangettt
         </h1>     
         <h2 class="mt-3 animate__animated animate__fateIn">
-          - Dari : Mama, Kakak, Uni dan Qiana -
+          - Dari : Kakak Cantik Pintar-
         </h2> 
         <button 
-        class="p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-900 transition ease-in w-full 
+        class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full 
         animate__animated animate__delay-1s
-        animate__pulse" onclick="refresh()"
+        animate__tada" onclick="ubahKartu2()"
         >
-          Klik Disini!
+          NEXTTT!!
+        </button>
+        `;
+      }
+
+      // let Kartu2 = document.getElementById("kartu1");
+      function ubahKartu2() {
+        Kartu.innerHTML = `<h1 class="font-semibold text-wrap animate__animated animate_zoomIn"> 
+        Hi papa, ga banyak kata kata karena uni udah ga pinter bikin kata kata kyk dulu hehe, Happy Birthday Papa yg ke-48 tahun!. Papa tuh orang ter-besttt di hidup Uni, kadang Uni kesel sama Papa ga bisa mahamin Uni, tapi Uni sadar itu karena Papa sama Uni umurnya beda jauhh dan beda generasi juga. Maafin Uni ya Papa kalo Uni banyak salah sama Papa. Semoga Papa diberi umur yang panjang sehat dan barokah, bisa menjadi bapak kasal dan bisa menjadi pemimpin yang berguna bagi nusa dan bangsa serta dilancarkan, dilimpahkan rezekinya. Uni 💖 Papa </h1>     
+        <h2 class="mt-3 animate__animated animate__fateIn">
+          - Dari : Uni Keren -
+        </h2> 
+        <button 
+        class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full 
+        animate__animated animate__delay-1s
+        animate__tada" onclick="ubahKartu3()"
+        >
+          NEXT LAGII!!
+        </button>
+        `;
+      }
+
+      // let Kartu3 = document.getElementById("kartu1");
+      function ubahKartu3() {
+        Kartu.innerHTML = `<h1 class="font-semibold text-wrap animate__animated animate_zoomIn"> 
+        Papa Semoga Papa punya rezeki berlimpah, semoga Papa bisa hidup dengan bahagia dan Papa semoga bisa masuk surga, Semoga Papa umurnya panjang dan papa punya anak anak yang sholeha, papa i love you papa, HAPPY BIRTHDAY PAPA GANTENGG!! :D 
+        </h1>     
+        <h2 class="mt-3 animate__animated animate__fateIn">
+          - Dari : Adek Qiana -
+        </h2> 
+        <button 
+        class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full 
+        animate__animated animate__delay-1s
+        animate__tada" onclick="ubahKartu4()"
+        >
+          NOTE>>>
+        </button>
+        `;
+      }
+
+      function ubahKartu4() {
+        Kartu.innerHTML = `<h1 class="font-semibold text-wrap animate__animated animate_zoomIn"> 
+        hehe sekian dari web yang Uni buat dengan penuh kasih sayang untuk ulang tahun papa yang ke-48. Maaf kalo Uni baru bisa memberikan yang seperti ini, Uni usahakan tahun depan Uni bisa memberikan yang lebih bagus. oh iya Webnya bisa dibuka kapan aja yaa!! :D
+        </h1>     
+        <h2 class="mt-3 animate__animated animate__fateIn">
+          - Note dari yang bikin -
+        </h2> 
+        <button 
+        class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full 
+        animate__animated animate__delay-1s
+        animate__tada" onclick="refresh()"
+        >
+          refresh web
         </button>
         `;
       }
       
       function refresh() {
-        location.reload();
-      }
+    // Sembunyikan tombol
+        document.getElementById("kartu1").style.display = "none";
+
+          setTimeout(function() {
+            location.reload();
+          }, 10000);
+        }     
     </script>
   </body>
 </html>
-
